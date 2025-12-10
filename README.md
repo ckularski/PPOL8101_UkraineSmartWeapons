@@ -37,8 +37,38 @@ This repository contains a single-file SQL repository. To use this file, establi
 |source	|text	|character	|Original source URL documenting the attack.|
 
 ### un_ukraine_casualties
+|Column Name	|SQL Data Type	|R Data Type	|Description|
+| ----------- | ----------- | ----------- | ----------- |
+|ObsID	|int(11) NOT NULL	|integer	|Unique Observation Identifier. This is the primary key for the record.|
+|Country	|varchar(128)	|character	|Country name (Expected to be 'Ukraine' for all records).|
+|Admin1	|varchar(128)	|character	|Province or first-level administrative division (ex: Oblast name).|
+|Admin2	|varchar(128)	|character	|Administrative district or second-level administrative division (ex: Raion name).|
+|ISO3	|varchar(24)	|character	|3-Character ISO-3166 Country Code (Expected to be 'UKR').|
+|Admin2 Pcode	|text	|character	|P-code (humanitarian operational code) for the Administrative district (Admin2).|
+|Admin1 Pcode	|text	|character	|P-code (humanitarian operational code) for the Province (Admin1).|
+|Month	|varchar(24)	|character	|Month of event (ex: January, February).|
+|Year	|int(11)	|integer	|Year of event.|
+|MonthStarting	|date	|numeric	|First day of event month (ex: January 1, 2022).|
+|Events	|int(11)	|integer	|Number of attacks/hostile events recorded for the specified region and time period.|
+|Fatalities	|int(11)	|integer	|Number of recorded fatalities for the specified region and time period.|
 
 ### warspotting_losses
+|Column Name	|SQL Data Type	|R Data Type	|Description|
+| ----------- | ----------- | ----------- | ----------- |
+|id	|int(11) NOT NULL	|integer	|Observation ID. This is the unique identifier for each loss record.|
+|date	|datetime	|numeric	|Event date and time when the loss occurred.|
+|type	|varchar(128)	|character	|Type of weapon or military asset (ex: Tank, APC, Aircraft).|
+|model	|varchar(128)	|character	|Model of weapon or military asset (ex: T-72B3, M2 Bradley).|
+|status	|varchar(128)	|character	|Status of the weapon after the event (ex: Destroyed, Captured, Damaged).|
+|lost_by	|varchar(128)	|character	|Country losing the asset.|
+|nearest_location	|text	|character	|Recognized location nearest the loss event.|
+|geo	|text	|character	|Geographic coordinate pair for the loss location.|
+|lat	|double	|numeric	|Latitude of the loss location.|
+|long	|double	|numeric	|Longitude of the loss location.|
+|unit	|text	|character	|Military unit responsible for the weapon/asset.|
+|tags	|text	|character	|Text tags for categorization or supplementary context.|
+|comment	|text	|character	|Additional comments or narrative regarding the loss event.|
+|sources	|text	|character	|Source information, if available.|
 
 ## Dervived Views
 
