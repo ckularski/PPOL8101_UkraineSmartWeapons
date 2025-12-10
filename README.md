@@ -10,7 +10,7 @@ This repository contains a single-file SQL repository. To use this file, establi
 ## Core Tables
 
 ### missile_attacks_daily
-|Column Name |SQL Data Type |R Type	||Description |
+|Column Name |SQL Data Type |R Type	|Description |
 | ----------- | ----------- | ----------- | ----------- |
 |ObsID	|int(11) NOT NULL	|integer	|Unique Observation Identifier. This is the primary key.|
 |time_start	|datetime	|numeric	|Event/Attack Start Date and Time.|
